@@ -49,7 +49,7 @@ const seperateCells = (csv) =>{
     }
 
     for (let i = 0; i < csv.length; i++) {
-        const char = csv[i];
+        const char = csv[i]
     
         if (char === ",") {
             cellIndex++
