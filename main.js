@@ -67,6 +67,6 @@ const seperateCells = (csv) =>{
     return obj
 }
 
-// console.table(seperateCells(csv))
-// console.table(seperateCells(csv2)) //ignore the fact the mass is the key 😅 can fix later if necessary
+console.table(seperateCells(csv))
+console.table(seperateCells(csv2)) //ignore the fact the mass is the key 😅 can fix later if necessary
 // console.log(seperateCells(csv2))
