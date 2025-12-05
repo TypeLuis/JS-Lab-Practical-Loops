@@ -6,7 +6,7 @@ const fizzBuzz = () => {
         noFizzBuzz : []
     }
     for(let i = 1; i <= 100; i++){
-        if(i % 3 === 0 && i % 5 === 0)fizzBuzz.fizzBuzz.push(i)
+        if(i % 15 === 0)fizzBuzz.fizzBuzz.push(i)
         else if(i % 3 === 0) fizzBuzz.fizz.push(i)
         else if(i % 5 === 0) fizzBuzz.buzz.push(i)
         else fizzBuzz.noFizzBuzz.push(i)
@@ -33,7 +33,8 @@ const seperateCells = (csv) =>{
     
     const flush = () => {
         if(rowIndex === 0){
-            header = [...cells]
+            header = [...cells] //spread current cells array into new array 
+            rowIndex ++
         } else{
             obj[cells[1]] = {
                 [header[0]] : cells[0],
@@ -45,7 +46,6 @@ const seperateCells = (csv) =>{
     
         cells =  ["", "", "", ""]
         cellIndex = 0
-        rowIndex++
     }
 
     for (let i = 0; i < csv.length; i++) {
@@ -64,10 +64,9 @@ const seperateCells = (csv) =>{
     
     
     flush() // Handle last row if no newline at end
-
     return obj
 }
 
-console.table(seperateCells(csv))
-console.table(seperateCells(csv2)) //ignore the fact the mass is the key 😅 can fix later if necessary
+// console.table(seperateCells(csv))
+// console.table(seperateCells(csv2)) //ignore the fact the mass is the key 😅 can fix later if necessary
 // console.log(seperateCells(csv2))
